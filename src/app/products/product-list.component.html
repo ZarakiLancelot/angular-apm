@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-2">
-                Filter by product name:
+                Search by:
             </div>
             <div class="col-md-4">
                 <input type="text" [(ngModel)]="listFilter">
@@ -46,7 +46,7 @@
                         <td>{{ product.productCode | convertToSpaces:'-' }}</td>
                         <td>{{ product.releaseDate }}</td>
                         <td>{{ product.price | currency:'GTQ ':'symbol':'1.2-2' }}</td>
-                        <td><pm-star [rating]="product.starRating"></pm-star></td>
+                        <td><pm-star [rating]="product.starRating" (ratingClicked)="onRatingClicked($event)"></pm-star></td>
                     </tr>
                 </tbody>
             </table>
